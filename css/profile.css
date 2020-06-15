@@ -16,7 +16,7 @@ body {
 
 .main {
   display: flex;
-  margin: 6rem 5rem;
+  margin: 6rem 5rem 0 5rem;
   height: 60vh;
 }
 

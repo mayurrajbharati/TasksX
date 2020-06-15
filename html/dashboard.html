@@ -34,31 +34,12 @@
         </div>
         <div class="header__profile-btn">
           <a href="./profile.html" class="profile-btn">My profile</a>
+          <a href="../index.html" class="profile-btn">Logout</a>
         </div>
       </div>
     </div>
     <main class="main">
-      <div class="main-div">
-        <div id="addBtn" class="wrapper">
-          <button class="circle">
-            <img
-              id="addSign"
-              src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png"
-              alt=""
-            />
-          </button>
-        </div>
-      </div>
+      <div class="main-div"></div>
     </main>
-    <script>
-      var addMode = false;
-
-      $(".circle").click(function () {
-        addMode = ~addMode;
-        $("#addSign").css({
-          transform: addMode ? "rotate(315deg)" : "rotate(0deg)",
-        });
-      });
-    </script>
   </body>
 </html>
