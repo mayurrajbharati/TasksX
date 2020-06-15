@@ -1,0 +1,126 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.header__profile {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.profile-btn,
+.profile-btn:link,
+.profile-btn:visited {
+  background-color: #192a56;
+  height: 50px;
+  padding: 10px;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.header__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header__text-heading {
+  text-align: center;
+  font-size: 70px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+.header__text-sub-heading {
+  text-align: center;
+
+  margin-top: 20px;
+  font-size: 30px;
+  color: black;
+  font-weight: 500;
+}
+
+.main {
+  position: relative;
+  margin-top: 150px;
+}
+
+.main-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  height: 500px;
+  width: 800px;
+}
+
+/* button */
+button {
+  border: none;
+  outline: none;
+}
+.wrapper {
+  margin: auto;
+  padding: 50px 0;
+  width: 60px;
+  height: 60px;
+  z-index: 2147483647;
+}
+.circle {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-color: #555;
+  opacity: 0.5;
+  display: flex;
+  transition: 0.2s;
+}
+.circle img {
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+}
+.circle:hover,
+.circle:focus {
+  cursor: pointer;
+}
