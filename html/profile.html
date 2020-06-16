@@ -11,10 +11,22 @@
       <div class="main__photo">
         <div class="profile">
           <div class="header__profile">
-            <img class="profile-img" src="../images/profile.webp" alt="" />
+            <img
+              id="wizardPicturePreview"
+              class="profile-img"
+              src="../images/profile.webp"
+              alt=""
+            />
           </div>
           <div class="header__profile-btn">
-            <a href="#" class="profile-btn">Choose picture</a>
+            <input
+              type="file"
+              name="file"
+              id="wizard-picture"
+              aria-invalid="false"
+              class="valid file-input"
+              accept="image/*"
+            />
             <a href="#" class="profile-btn">Save changes</a>
           </div>
           <div class="user-details">
@@ -78,4 +90,22 @@
       </div>
     </a>
   </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+  <script>
+    $("#wizard-picture").change(function () {
+      readURL(this);
+    });
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $("#wizardPicturePreview")
+            .attr("src", e.target.result)
+            .fadeIn("slow");
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
 </html>
