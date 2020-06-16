@@ -358,3 +358,12 @@ button {
     width: 90vw;
   }
 }
+
+@media (max-width: 400px) {
+  .popup {
+    width: 350px;
+  }
+  .update-popup-input {
+    width: 300px;
+  }
+}
