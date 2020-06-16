@@ -39,7 +39,128 @@
       </div>
     </div>
     <main class="main">
-      <div class="main-div"></div>
+      <div class="main-div">
+        <div class="add-task">
+          <input type="text" class="add-task-input" placeholder="add a task" />
+          <a href="#" class="add-task-btn">Add</a>
+        </div>
+
+        <div class="tasks">
+          <div class="name">&nbsp; 1. &nbsp;Learn Node JS</div>
+          <div class="popup">
+            <div class="popup-content">
+              <input
+                type="text"
+                class="update-popup-input"
+                placeholder="update task"
+              />
+              <a href="#" class="popup-update">Update</a>
+            </div>
+            <div class="close">+</div>
+          </div>
+          <div class="btns">
+            <a href="#" class="btn-complete">Complete</a>
+            <a href="#" class="btn-update">Update</a>
+            <a href="#" class="btn-delete">Delete</a>
+          </div>
+        </div>
+        <div class="tasks">
+          <div class="name">&nbsp; 2. &nbsp;Learn Flutter</div>
+          <div class="popup">
+            <div class="popup-content">
+              <input
+                type="text"
+                class="update-popup-input"
+                placeholder="update task"
+              />
+              <a href="#" class="popup-update">Update</a>
+            </div>
+            <div class="close">+</div>
+          </div>
+          <div class="btns">
+            <a href="#" class="btn-complete">Complete</a>
+            <a href="#" class="btn-update">Update</a>
+            <a href="#" class="btn-delete">Delete</a>
+          </div>
+        </div>
+        <div class="tasks">
+          <div class="name">&nbsp; 3. &nbsp;Learn React</div>
+          <div class="popup">
+            <div class="popup-content">
+              <input
+                type="text"
+                class="update-popup-input"
+                placeholder="update task"
+              />
+              <a href="#" class="popup-update">Update</a>
+            </div>
+            <div class="close">+</div>
+          </div>
+          <div class="btns">
+            <a href="#" class="btn-complete">Complete</a>
+            <a href="#" class="btn-update">Update</a>
+            <a href="#" class="btn-delete">Delete</a>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
+
+  <script>
+    var btnArray = document.querySelectorAll(".btn-complete");
+    btnArray.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        var btnStatus = btn["innerText"];
+        var todoListItem =
+          e.target["parentElement"]["parentElement"]["childNodes"][1]["style"];
+
+        if (btnStatus == "Complete") {
+          btn["innerText"] = "Undo";
+          todoListItem["text-decoration"] = "line-through";
+        } else {
+          btn["innerText"] = "Complete";
+          todoListItem["text-decoration"] = "none";
+        }
+      });
+    });
+  </script>
+
+  <script>
+    document
+      .querySelector(".btn-update")
+      .addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "block";
+      });
+
+    document.querySelector(".close").addEventListener("click", function () {
+      document.querySelector(".popup").style.display = "none";
+    });
+  </script>
+  <!-- <script>
+    const todoInput = document.querySelector(".add-task-input");
+    const todoDiv = document.createElement("div");
+    const todoList = document.querySelector(".tasks");
+
+    const todoButton = document.querySelector(".add-task-btn");
+    todoButton.addEventListener("click", addToList);
+    function addToList() {
+      const todoDiv = document.createElement("div");
+      const newTodo = document.createElement("div");
+      if (todoInput.value != "" && todoInput.value != " ") {
+        newTodo.innerText = todoInput.value;
+ 
+        newTodo.classList.add("btn-complete");
+        newTodo.classList.add("btn-update");
+        newTodo.classList.add("btn-delete");
+
+        todoDiv.appendChild(newTodo);
+
+
+        todoInput.value = " ";
+        todoList.appendChild(todoDiv);
+      } else {
+        alert("Enter a valid task");
+      }
+    }
+  </script> -->
 </html>
