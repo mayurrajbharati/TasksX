@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | TasksX</title>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__svg">
+        <svg
+          height="600px"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#0099ff"
+            fill-opacity="1"
+            d="M0,224L80,208C160,192,320,160,480,170.7C640,181,800,235,960,240C1120,245,1280,203,1360,181.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="header__text">
+        <div class="header__text-heading">TasksX</div>
+        <div class="header__text-sub-heading">
+          Your all in one task manager
+        </div>
+      </div>
+      <div class="profile">
+        <div class="header__profile-btn">
+          <div>
+            <form action="/users/me" method="GET">
+              <button class="profile-btn" type="submit">
+                My Profile
+              </button>
+            </form>
+          </div>
+          <div>
+            <form action="/users/logout" method="POST">
+              <button class="profile-btn-b" type="submit">
+                Sign out
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="main-div">
+        <div class="add-task">
+          <form action="dashboard/tasks" method="POST">
+            <input
+              type="text"
+              class="add-task-input"
+              name="description"
+              placeholder="add a task"
+            />
+            <button type="submit" class="add-task-btn">Add</button>
+          </form>
+        </div>
+        <form action="/dashboard/tasks" method="GET">
+          <div
+            style="display: flex; justify-content: center; margin-top: 50px;"
+          >
+            <button class="view-all-tasks" type="submit">
+              View All Tasks
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

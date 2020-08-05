@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <title>Profile | TasksX</title>
+  </head>
+  <body>
+    <a href="/dashboard" class="back-button">
+      <div class="arrow-wrap">
+        <span class="arrow-part-1"></span>
+        <span class="arrow-part-2"></span>
+        <span class="arrow-part-3"></span>
+      </div>
+    </a>
+    <div class="profile-picture__div">
+      <% if(!user.imgname) { %>
+      <img class="profile-picture" src="/images/user.jpg" alt="img" />
+      <%} else { %>
+      <img
+        class="profile-picture"
+        src="/images/<%= user.imgname %>"
+        alt="img"
+      />
+      <%} %>
+    </div>
+    <form
+      action="/users/me/avatars"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      <div class="update-picture">
+        <input class="input-pic" name="avatar" type="file" />
+        <input type="submit" class="save-pic" value="Save picture" />
+      </div>
+    </form>
+    <div class="profile-details__div">
+      <div class="profile-details">
+        <form action="/users/me/update" method="POST">
+          <label class="label-options" for="name">Name</label> <br />
+          <input
+            class="input-options"
+            name="name"
+            type="text"
+            value="<%= user.name %>"
+          />
+          <label class="label-options" for="email">Email</label> <br />
+          <input
+            class="input-options"
+            name="email"
+            type="text"
+            value="<%= user.email %>"
+          />
+          <label class="label-options" for="age">Age</label> <br />
+          <input
+            class="input-options"
+            name="age"
+            type="text"
+            value="<%= user.age%>"
+          />
+          <input
+            type="submit"
+            value="Update Information"
+            class="btn-update-info"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="danger-zone">
+      <div class="danger-zone-heading">
+        <h1 class="danger-zone-heading-line">Danger Zone</h1>
+      </div>
+      <form action="/users/password/update" method="POST">
+        <label for="currentpassword" class="danger-zone-label"
+          >Current Password</label
+        >
+        <br />
+        <input
+          type="password"
+          name="currentPassword"
+          class="danger-zone-input"
+        />
+        <label for="newpassword" class="danger-zone-label">New Password</label>
+        <br />
+        <input type="password" name="newPassword" class="danger-zone-input" />
+        <label for="confirmpassword" class="danger-zone-label"
+          >Confirm Password</label
+        >
+        <br />
+        <input
+          type="password"
+          name="confirmPassword"
+          class="danger-zone-input"
+        />
+        <button class="danger-zone-change-password">
+          Change Password
+        </button>
+      </form>
+      <form action="/users/me/delete" method="GET">
+        <button class="danger-zone-delete-user">
+          Permanently Delete User
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
